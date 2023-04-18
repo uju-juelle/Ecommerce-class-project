@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-    {% for p in allproducts %}
+    
         <article class="media content-section">
           <img class="rounded-circle article-img" src="{{ p.image.url }}">
           <div class="media-body">
@@ -9,9 +9,8 @@
               <!-- <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small> -->
             </div>
             <h2><a class="article-title" href="{% url 'single' p.id %}">{{ p.name }}</a></h2>
-            <p class="article-content">{{ p.description|truncatewords:30 }}</p>
+            <p class="article-content">{{ p.description }}</p>
             <h2 class="article-content">{{ p.price }}</h2>
           </div>
         </article>
-    {% endfor %}
 {% endblock content %}
